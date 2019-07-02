@@ -1,0 +1,79 @@
+\hypertarget{class_poly_voice}{}\section{Poly\+Voice Class Reference}
+\label{class_poly_voice}\index{Poly\+Voice@{Poly\+Voice}}
+
+
+Used for implimenting polyphony.  
+
+
+
+
+{\ttfamily \#include $<$Poly.\+h$>$}
+
+
+
+Inheritance diagram for Poly\+Voice\+:
+% FIG 0
+
+
+Collaboration diagram for Poly\+Voice\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Poly\+Voice} (Synth\+Audio\+Processor\+::\+Parameter\+Vector $\ast$harmonic\+Params, Synth\+Audio\+Processor\+::\+Parameter\+Vector $\ast$attack\+Params, Synth\+Audio\+Processor\+::\+Parameter\+Vector $\ast$decay\+Params, Synth\+Audio\+Processor\+::\+Parameter\+Vector $\ast$sustain\+Params, Synth\+Audio\+Processor\+::\+Parameter\+Vector $\ast$release\+Params, Synth\+Audio\+Processor\+::\+Parameter\+Vector $\ast$pitch\+Amount\+Params, Synth\+Audio\+Processor\+::\+Parameter\+Vector $\ast$pitch\+Attack\+Params, Synth\+Audio\+Processor\+::\+Parameter\+Vector $\ast$pitch\+Decay\+Params, Synth\+Audio\+Processor\+::\+Parameter\+Vector $\ast$pitch\+Sustain\+Params, Synth\+Audio\+Processor\+::\+Parameter\+Vector $\ast$pitch\+Release\+Params)\hypertarget{class_poly_voice_a555b2b828c709b0189ee771182a138c8}{}\label{class_poly_voice_a555b2b828c709b0189ee771182a138c8}
+
+\item 
+bool {\bfseries can\+Play\+Sound} (Synthesiser\+Sound $\ast$sound)\hypertarget{class_poly_voice_a7f0ecab501692d7b5cb8818281056d09}{}\label{class_poly_voice_a7f0ecab501692d7b5cb8818281056d09}
+
+\item 
+void {\bfseries start\+Note} (int midi\+Note\+Number, float velocity, Synthesiser\+Sound $\ast$, int current\+Pitch\+Wheel\+Position)\hypertarget{class_poly_voice_ad412e89fa7e78f503dd33c4310c74c17}{}\label{class_poly_voice_ad412e89fa7e78f503dd33c4310c74c17}
+
+\item 
+void \hyperlink{class_poly_voice_abce53e6f5d9b1fd77cfb561ff72e0934}{stop\+Note} (float velocity, bool allow\+Tail\+Off) override\hypertarget{class_poly_voice_abce53e6f5d9b1fd77cfb561ff72e0934}{}\label{class_poly_voice_abce53e6f5d9b1fd77cfb561ff72e0934}
+
+\begin{DoxyCompactList}\small\item\em For implimenting release of envelope. \end{DoxyCompactList}\item 
+void \hyperlink{class_poly_voice_ab104e7e77f632daa0a193fbb91842a17}{render\+Next\+Block} (Audio\+Sample\+Buffer \&output\+Buffer, int start\+Sample, int num\+Samples) override\hypertarget{class_poly_voice_ab104e7e77f632daa0a193fbb91842a17}{}\label{class_poly_voice_ab104e7e77f632daa0a193fbb91842a17}
+
+\begin{DoxyCompactList}\small\item\em Creates a block of samples to be played. \end{DoxyCompactList}\item 
+bool {\bfseries set\+\_\+pitch\+\_\+bypass} (int bypass)\hypertarget{class_poly_voice_a4b208c88cbc1ab64dd8abecdc426b00b}{}\label{class_poly_voice_a4b208c88cbc1ab64dd8abecdc426b00b}
+
+\item 
+virtual void {\bfseries pitch\+Wheel\+Moved} (int new\+Pitch\+Wheel\+Value)\hypertarget{class_poly_voice_a67d94dd26fb335fda78e478b5f73b605}{}\label{class_poly_voice_a67d94dd26fb335fda78e478b5f73b605}
+
+\item 
+virtual void \hyperlink{class_poly_voice_acbeb017fc5d66d6a2cb73802c37be4bb}{controller\+Moved} (int controller\+Number, int new\+Controller\+Value)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_wave_table}{Wave\+Table} \& {\bfseries get\+\_\+wavetable} ()\hypertarget{class_poly_voice_a325ad7c776c459c7b61e568a7c97d09b}{}\label{class_poly_voice_a325ad7c776c459c7b61e568a7c97d09b}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static float {\bfseries m\+\_\+set\+Target\+RatioA}\hypertarget{class_poly_voice_a500ab64a8f85b97f304f1f8dc19148d6}{}\label{class_poly_voice_a500ab64a8f85b97f304f1f8dc19148d6}
+
+\item 
+static float {\bfseries m\+\_\+set\+Target\+Ratio\+DR}\hypertarget{class_poly_voice_aa324531526b0900f2bec46e94a3ad932}{}\label{class_poly_voice_aa324531526b0900f2bec46e94a3ad932}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used for implimenting polyphony. 
+
+\subsection{Member Function Documentation}
+\index{Poly\+Voice@{Poly\+Voice}!controller\+Moved@{controller\+Moved}}
+\index{controller\+Moved@{controller\+Moved}!Poly\+Voice@{Poly\+Voice}}
+\subsubsection[{\texorpdfstring{controller\+Moved(int controller\+Number, int new\+Controller\+Value)}{controllerMoved(int controllerNumber, int newControllerValue)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Poly\+Voice\+::controller\+Moved (
+\begin{DoxyParamCaption}
+\item[{int}]{controller\+Number, }
+\item[{int}]{new\+Controller\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_poly_voice_acbeb017fc5d66d6a2cb73802c37be4bb}{}\label{class_poly_voice_acbeb017fc5d66d6a2cb73802c37be4bb}
+Called to let the voice know that a midi controller has been moved. This will be called during the rendering callback, so must be fast and thread-\/safe. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Poly.\+h\end{DoxyCompactItemize}

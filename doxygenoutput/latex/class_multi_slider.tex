@@ -1,0 +1,91 @@
+\hypertarget{class_multi_slider}{}\section{Multi\+Slider Class Reference}
+\label{class_multi_slider}\index{Multi\+Slider@{Multi\+Slider}}
+
+
+Inheritance diagram for Multi\+Slider\+:
+% FIG 0
+
+
+Collaboration diagram for Multi\+Slider\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_multi_slider_a10a78d4cbf4d1f05871ebdb59668ae24}{Multi\+Slider} (int steps)
+\begin{DoxyCompactList}\small\item\em This is the core class for user interaction. \end{DoxyCompactList}\item 
+void \hyperlink{class_multi_slider_ab4b5d35d7d550d8066603dad674bafdf}{paint} (Graphics \&) override\hypertarget{class_multi_slider_ab4b5d35d7d550d8066603dad674bafdf}{}\label{class_multi_slider_ab4b5d35d7d550d8066603dad674bafdf}
+
+\begin{DoxyCompactList}\small\item\em Draws multislider content. \end{DoxyCompactList}\item 
+void {\bfseries resized} () override\hypertarget{class_multi_slider_a3b96a42d6d2772cb492d156ef8ec86b8}{}\label{class_multi_slider_a3b96a42d6d2772cb492d156ef8ec86b8}
+
+\item 
+virtual void \hyperlink{class_multi_slider_a2703ad25c777a65399038df01b518f2b}{mouse\+Down} (const Mouse\+Event \&event) override\hypertarget{class_multi_slider_a2703ad25c777a65399038df01b518f2b}{}\label{class_multi_slider_a2703ad25c777a65399038df01b518f2b}
+
+\begin{DoxyCompactList}\small\item\em Called when a mouse button is pressed. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_multi_slider_a487d28df1e4f7eb0282b65f4f7849776}{mouse\+Drag} (const Mouse\+Event \&event) override\hypertarget{class_multi_slider_a487d28df1e4f7eb0282b65f4f7849776}{}\label{class_multi_slider_a487d28df1e4f7eb0282b65f4f7849776}
+
+\begin{DoxyCompactList}\small\item\em Called when the mouse is moved while a button is held down. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_multi_slider_a3a002d5eaf8413e2dfefc40580ba1922}{mouse\+Up} (const Mouse\+Event \&event) override\hypertarget{class_multi_slider_a3a002d5eaf8413e2dfefc40580ba1922}{}\label{class_multi_slider_a3a002d5eaf8413e2dfefc40580ba1922}
+
+\begin{DoxyCompactList}\small\item\em Called when a mouse button is released. \end{DoxyCompactList}\item 
+void \hyperlink{class_multi_slider_a46aa5cd567343e1d25d06ef9e517c9b6}{set\+\_\+parameter\+\_\+value} (int param\+Index, float value)\hypertarget{class_multi_slider_a46aa5cd567343e1d25d06ef9e517c9b6}{}\label{class_multi_slider_a46aa5cd567343e1d25d06ef9e517c9b6}
+
+\begin{DoxyCompactList}\small\item\em Sets multislider to output usable parameters. \end{DoxyCompactList}\item 
+void \hyperlink{class_multi_slider_a00b71ab550c43ef5d66e57b867a220b0}{set\+\_\+background\+\_\+colour} (Colour col)\hypertarget{class_multi_slider_a00b71ab550c43ef5d66e57b867a220b0}{}\label{class_multi_slider_a00b71ab550c43ef5d66e57b867a220b0}
+
+\begin{DoxyCompactList}\small\item\em Sets background Colour of multislider tab. \end{DoxyCompactList}\item 
+void \hyperlink{class_multi_slider_a2f2eec14c4878ccaebc7bfaca6391fc3}{set\+\_\+foreground\+\_\+colour} (Colour col)\hypertarget{class_multi_slider_a2f2eec14c4878ccaebc7bfaca6391fc3}{}\label{class_multi_slider_a2f2eec14c4878ccaebc7bfaca6391fc3}
+
+\begin{DoxyCompactList}\small\item\em Sets colour of multislider sliders. \end{DoxyCompactList}\item 
+float \hyperlink{class_multi_slider_a28d26d367776824e50ba5386343d83e8}{get\+Current\+Slider\+Value} (int index)
+\begin{DoxyCompactList}\small\item\em Gets the value of the parameter beig manipulated. \end{DoxyCompactList}\item 
+void \hyperlink{class_multi_slider_a604e9e59c5045acc29b8a1ac6e85a102}{set\+\_\+parameter\+\_\+vector} (Synth\+Audio\+Processor\+::\+Parameter\+Vector $\ast$params)\hypertarget{class_multi_slider_a604e9e59c5045acc29b8a1ac6e85a102}{}\label{class_multi_slider_a604e9e59c5045acc29b8a1ac6e85a102}
+
+\begin{DoxyCompactList}\small\item\em Creates vectors to hold multislider parameters. \end{DoxyCompactList}\item 
+void {\bfseries refresh} ()\hypertarget{class_multi_slider_a93b1da566d820b0729988aca03fecd53}{}\label{class_multi_slider_a93b1da566d820b0729988aca03fecd53}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Multi\+Slider@{Multi\+Slider}!Multi\+Slider@{Multi\+Slider}}
+\index{Multi\+Slider@{Multi\+Slider}!Multi\+Slider@{Multi\+Slider}}
+\subsubsection[{\texorpdfstring{Multi\+Slider(int steps)}{MultiSlider(int steps)}}]{\setlength{\rightskip}{0pt plus 5cm}Multi\+Slider\+::\+Multi\+Slider (
+\begin{DoxyParamCaption}
+\item[{int}]{steps}
+\end{DoxyParamCaption}
+)}\hypertarget{class_multi_slider_a10a78d4cbf4d1f05871ebdb59668ae24}{}\label{class_multi_slider_a10a78d4cbf4d1f05871ebdb59668ae24}
+
+
+This is the core class for user interaction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em steps} & the number of sliders required \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Multi\+Slider@{Multi\+Slider}!get\+Current\+Slider\+Value@{get\+Current\+Slider\+Value}}
+\index{get\+Current\+Slider\+Value@{get\+Current\+Slider\+Value}!Multi\+Slider@{Multi\+Slider}}
+\subsubsection[{\texorpdfstring{get\+Current\+Slider\+Value(int index)}{getCurrentSliderValue(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}float Multi\+Slider\+::get\+Current\+Slider\+Value (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{class_multi_slider_a28d26d367776824e50ba5386343d83e8}{}\label{class_multi_slider_a28d26d367776824e50ba5386343d83e8}
+
+
+Gets the value of the parameter beig manipulated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Outputs which tab of the multislider is being affected \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Multi\+Slider.\+h\item 
+Multi\+Slider.\+cpp\end{DoxyCompactItemize}

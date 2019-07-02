@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FILTERGRAPH>
+  <FILTER uid="5" x="0.5" y="0.10000000149011611938">
+    <PLUGIN name="Audio Input" descriptiveName="" format="Internal" category="I/O devices"
+            manufacturer="ROLI Ltd." version="1.0" file="" uid="246006c0"
+            isInstrument="0" fileTime="0" infoUpdateTime="0" numInputs="0"
+            numOutputs="2" isShell="0"/>
+    <STATE>0.</STATE>
+  </FILTER>
+  <FILTER uid="6" x="0.25" y="0.10000000149011611938">
+    <PLUGIN name="Midi Input" descriptiveName="" format="Internal" category="I/O devices"
+            manufacturer="ROLI Ltd." version="1.0" file="" uid="cb5fde0b"
+            isInstrument="0" fileTime="0" infoUpdateTime="0" numInputs="0"
+            numOutputs="0" isShell="0"/>
+    <STATE>0.</STATE>
+  </FILTER>
+  <FILTER uid="7" x="0.5" y="0.89999997615814208984">
+    <PLUGIN name="Audio Output" descriptiveName="" format="Internal" category="I/O devices"
+            manufacturer="ROLI Ltd." version="1.0" file="" uid="724248cb"
+            isInstrument="0" fileTime="0" infoUpdateTime="0" numInputs="2"
+            numOutputs="0" isShell="0"/>
+    <STATE>0.</STATE>
+  </FILTER>
+  <FILTER uid="11" x="0.35375000000000000888" y="0.50925925925925930038"
+          uiLastX_Normal="91" uiLastY_Normal="64" uiopen_Normal="0">
+    <PLUGIN name="BaSynth" format="VST" category="Synth" manufacturer="yourcompany"
+            version="V1.0.0" file="/Users/Nick/Library/Audio/Plug-Ins/VST/BaSynth.vst"
+            uid="4970796d" isInstrument="1" fileTime="1607f9432f8" infoUpdateTime="1607f946597"
+            numInputs="0" numOutputs="2" isShell="0"/>
+    <STATE>160.CMlaKA....fQBMDZ....AjDb40F.A.......A.................................................................................................................................................................................</STATE>
+  </FILTER>
+</FILTERGRAPH>

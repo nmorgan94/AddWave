@@ -1,0 +1,36 @@
+\hypertarget{class_custom_look}{}\section{Custom\+Look Class Reference}
+\label{class_custom_look}\index{Custom\+Look@{Custom\+Look}}
+
+
+Creates custom UI elements.  
+
+
+
+
+{\ttfamily \#include $<$Custom\+Look.\+h$>$}
+
+
+
+Inheritance diagram for Custom\+Look\+:
+% FIG 0
+
+
+Collaboration diagram for Custom\+Look\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries draw\+Linear\+Slider} (Graphics \&g, int x, int y, int width, int height, float slider\+Pos, float min\+Slider\+Pos, float max\+Slider\+Pos, const Slider\+::\+Slider\+Style, Slider \&slider)\hypertarget{class_custom_look_af1c0dac2a07689b86aa47a9b52d468f3}{}\label{class_custom_look_af1c0dac2a07689b86aa47a9b52d468f3}
+
+\item 
+void \hyperlink{class_custom_look_abf943114c4bf1c948015376d24890b3e}{draw\+Rotary\+Slider} (Graphics \&g, int x, int y, int width, int height, float slider\+Pos, const float rotary\+Start\+Angle, const float rotary\+End\+Angle, Slider \&slider) override\hypertarget{class_custom_look_abf943114c4bf1c948015376d24890b3e}{}\label{class_custom_look_abf943114c4bf1c948015376d24890b3e}
+
+\begin{DoxyCompactList}\small\item\em Draws custom Dials. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Creates custom UI elements. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Custom\+Look.\+h\end{DoxyCompactItemize}

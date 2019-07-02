@@ -1,0 +1,91 @@
+.TH "MultiSlider" 3 "Wed Sep 6 2017" "Version 1.01" "AddWave" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MultiSlider \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Component\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMultiSlider\fP (int steps)"
+.br
+.RI "\fIThis is the core class for user interaction\&. \fP"
+.ti -1c
+.RI "void \fBpaint\fP (Graphics &) override"
+.br
+.RI "\fIDraws multislider content\&. \fP"
+.ti -1c
+.RI "void \fBresized\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDown\fP (const MouseEvent &event) override"
+.br
+.RI "\fICalled when a mouse button is pressed\&. \fP"
+.ti -1c
+.RI "virtual void \fBmouseDrag\fP (const MouseEvent &event) override"
+.br
+.RI "\fICalled when the mouse is moved while a button is held down\&. \fP"
+.ti -1c
+.RI "virtual void \fBmouseUp\fP (const MouseEvent &event) override"
+.br
+.RI "\fICalled when a mouse button is released\&. \fP"
+.ti -1c
+.RI "void \fBset_parameter_value\fP (int paramIndex, float value)"
+.br
+.RI "\fISets multislider to output usable parameters\&. \fP"
+.ti -1c
+.RI "void \fBset_background_colour\fP (Colour col)"
+.br
+.RI "\fISets background Colour of multislider tab\&. \fP"
+.ti -1c
+.RI "void \fBset_foreground_colour\fP (Colour col)"
+.br
+.RI "\fISets colour of multislider sliders\&. \fP"
+.ti -1c
+.RI "float \fBgetCurrentSliderValue\fP (int index)"
+.br
+.RI "\fIGets the value of the parameter beig manipulated\&. \fP"
+.ti -1c
+.RI "void \fBset_parameter_vector\fP (SynthAudioProcessor::ParameterVector *params)"
+.br
+.RI "\fICreates vectors to hold multislider parameters\&. \fP"
+.ti -1c
+.RI "void \fBrefresh\fP ()"
+.br
+.RI "\fIUsed to update the UI to changes in the parameters\&. \fP"
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MultiSlider::MultiSlider (int steps)"
+
+.PP
+This is the core class for user interaction\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsteps\fP the number of sliders required 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "float MultiSlider::getCurrentSliderValue (int index)"
+
+.PP
+Gets the value of the parameter beig manipulated\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Outputs which tab of the multislider is being affected 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AddWave from the source code\&.

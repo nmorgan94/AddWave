@@ -1,0 +1,170 @@
+\hypertarget{class_a_d_s_r}{}\section{A\+D\+SR Class Reference}
+\label{class_a_d_s_r}\index{A\+D\+SR@{A\+D\+SR}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries env\+State} \{ \\*
+{\bfseries env\+\_\+idle} = 0, 
+{\bfseries env\+\_\+attack}, 
+{\bfseries env\+\_\+decay}, 
+{\bfseries env\+\_\+sustain}, 
+\\*
+{\bfseries env\+\_\+release}
+ \}\hypertarget{class_a_d_s_r_a30e1fed82afed75d2e0fd991ba49f817}{}\label{class_a_d_s_r_a30e1fed82afed75d2e0fd991ba49f817}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_d_s_r_aadf84fe41cff1b78edd9a7080e1f7ad7}{$\sim$\+A\+D\+SR} (void)
+\item 
+float {\bfseries process} (void)\hypertarget{class_a_d_s_r_a2c4f8e14a8022f553fd903335b2aa4dd}{}\label{class_a_d_s_r_a2c4f8e14a8022f553fd903335b2aa4dd}
+
+\item 
+float {\bfseries get\+Output} (void)\hypertarget{class_a_d_s_r_ad3ee946178d0d23f83e94bf95ce98c96}{}\label{class_a_d_s_r_ad3ee946178d0d23f83e94bf95ce98c96}
+
+\item 
+int {\bfseries get\+State} (void)\hypertarget{class_a_d_s_r_a69eecf53c32127aaf472afc0e897cc07}{}\label{class_a_d_s_r_a69eecf53c32127aaf472afc0e897cc07}
+
+\item 
+void {\bfseries gate} (int on)\hypertarget{class_a_d_s_r_a8519d1faff0ff2b26e44675249093872}{}\label{class_a_d_s_r_a8519d1faff0ff2b26e44675249093872}
+
+\item 
+void \hyperlink{class_a_d_s_r_adf710a6ecb0980dd26a7b6ab0ead5127}{set\+Attack\+Rate} (float rate)
+\item 
+void \hyperlink{class_a_d_s_r_acdbd41bc66f06ab17abb171a335fc180}{set\+Decay\+Rate} (float rate)
+\item 
+void \hyperlink{class_a_d_s_r_a9f98384da4c14db473e4751f625e0e66}{set\+Release\+Rate} (float rate)
+\item 
+void \hyperlink{class_a_d_s_r_af9f4efe95e72ee6c0066a0249794f367}{set\+Sustain\+Level} (float level)
+\item 
+void \hyperlink{class_a_d_s_r_aad95d6ef2b3e685a31ae243ccf91ec42}{set\+Target\+RatioA} (float target\+Ratio)\hypertarget{class_a_d_s_r_aad95d6ef2b3e685a31ae243ccf91ec42}{}\label{class_a_d_s_r_aad95d6ef2b3e685a31ae243ccf91ec42}
+
+\begin{DoxyCompactList}\small\item\em Sets exponential rate of attack. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_d_s_r_ad7aafc0414359f08863eeb49970474e3}{set\+Target\+Ratio\+DR} (float target\+Ratio)\hypertarget{class_a_d_s_r_ad7aafc0414359f08863eeb49970474e3}{}\label{class_a_d_s_r_ad7aafc0414359f08863eeb49970474e3}
+
+\begin{DoxyCompactList}\small\item\em set exponential rate of decay and release \end{DoxyCompactList}\item 
+void {\bfseries reset} (void)\hypertarget{class_a_d_s_r_a82e4d4030c9a14edf8e5693fd9051c29}{}\label{class_a_d_s_r_a82e4d4030c9a14edf8e5693fd9051c29}
+
+\item 
+float {\bfseries get\+\_\+attack\+\_\+time} ()\hypertarget{class_a_d_s_r_af9985eedd297d59d632e22788af86d7b}{}\label{class_a_d_s_r_af9985eedd297d59d632e22788af86d7b}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries calc\+Coef} (float rate, float target\+Ratio)\hypertarget{class_a_d_s_r_ae088324f9aaae8b3c30973f548c34b1b}{}\label{class_a_d_s_r_ae088324f9aaae8b3c30973f548c34b1b}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries state}\hypertarget{class_a_d_s_r_a105312d38c7f833618fd9bb34391a927}{}\label{class_a_d_s_r_a105312d38c7f833618fd9bb34391a927}
+
+\item 
+float {\bfseries output}\hypertarget{class_a_d_s_r_ac6b34bdf72ba654d26467433f7015bbb}{}\label{class_a_d_s_r_ac6b34bdf72ba654d26467433f7015bbb}
+
+\item 
+float {\bfseries attack\+Rate}\hypertarget{class_a_d_s_r_a18f5339db1d84e79746cd3f32c42a4b6}{}\label{class_a_d_s_r_a18f5339db1d84e79746cd3f32c42a4b6}
+
+\item 
+float {\bfseries decay\+Rate}\hypertarget{class_a_d_s_r_aa1c60b6e7be70765ba8ff397f9d6339a}{}\label{class_a_d_s_r_aa1c60b6e7be70765ba8ff397f9d6339a}
+
+\item 
+float {\bfseries release\+Rate}\hypertarget{class_a_d_s_r_af6adca37b89079c8bb1c482130225e7a}{}\label{class_a_d_s_r_af6adca37b89079c8bb1c482130225e7a}
+
+\item 
+float {\bfseries attack\+Coef}\hypertarget{class_a_d_s_r_a0a057ea27733e54d5a254095e3cf8c76}{}\label{class_a_d_s_r_a0a057ea27733e54d5a254095e3cf8c76}
+
+\item 
+float {\bfseries decay\+Coef}\hypertarget{class_a_d_s_r_ae386e2e57945525f8e699cc27ea6b04b}{}\label{class_a_d_s_r_ae386e2e57945525f8e699cc27ea6b04b}
+
+\item 
+float {\bfseries release\+Coef}\hypertarget{class_a_d_s_r_a2caad04ed4ec3e87f5fa0ded1a7d140e}{}\label{class_a_d_s_r_a2caad04ed4ec3e87f5fa0ded1a7d140e}
+
+\item 
+float {\bfseries sustain\+Level}\hypertarget{class_a_d_s_r_aa02446c404e961975776b5b7d40d91a7}{}\label{class_a_d_s_r_aa02446c404e961975776b5b7d40d91a7}
+
+\item 
+float {\bfseries target\+RatioA}\hypertarget{class_a_d_s_r_ae3fa4b79f703f628dc71a70666d9dd3f}{}\label{class_a_d_s_r_ae3fa4b79f703f628dc71a70666d9dd3f}
+
+\item 
+float {\bfseries target\+Ratio\+DR}\hypertarget{class_a_d_s_r_af1ae09485f04530d0c0d1b2894f64287}{}\label{class_a_d_s_r_af1ae09485f04530d0c0d1b2894f64287}
+
+\item 
+float {\bfseries attack\+Base}\hypertarget{class_a_d_s_r_a0e7ecffdbe3a33cd026942135c8f6f18}{}\label{class_a_d_s_r_a0e7ecffdbe3a33cd026942135c8f6f18}
+
+\item 
+float {\bfseries decay\+Base}\hypertarget{class_a_d_s_r_a33b3300129cff490dff93c9a6dbf82f3}{}\label{class_a_d_s_r_a33b3300129cff490dff93c9a6dbf82f3}
+
+\item 
+float {\bfseries release\+Base}\hypertarget{class_a_d_s_r_ab58452f2cecdc465b52c3c8573188ed4}{}\label{class_a_d_s_r_ab58452f2cecdc465b52c3c8573188ed4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{A\+D\+SR@{A\+D\+SR}!````~A\+D\+SR@{$\sim$\+A\+D\+SR}}
+\index{````~A\+D\+SR@{$\sim$\+A\+D\+SR}!A\+D\+SR@{A\+D\+SR}}
+\subsubsection[{\texorpdfstring{$\sim$\+A\+D\+S\+R(void)}{~ADSR(void)}}]{\setlength{\rightskip}{0pt plus 5cm}A\+D\+S\+R\+::$\sim$\+A\+D\+SR (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_a_d_s_r_aadf84fe41cff1b78edd9a7080e1f7ad7}{}\label{class_a_d_s_r_aadf84fe41cff1b78edd9a7080e1f7ad7}
+Creates envelope paramters 
+
+\subsection{Member Function Documentation}
+\index{A\+D\+SR@{A\+D\+SR}!set\+Attack\+Rate@{set\+Attack\+Rate}}
+\index{set\+Attack\+Rate@{set\+Attack\+Rate}!A\+D\+SR@{A\+D\+SR}}
+\subsubsection[{\texorpdfstring{set\+Attack\+Rate(float rate)}{setAttackRate(float rate)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+S\+R\+::set\+Attack\+Rate (
+\begin{DoxyParamCaption}
+\item[{float}]{rate}
+\end{DoxyParamCaption}
+)}\hypertarget{class_a_d_s_r_adf710a6ecb0980dd26a7b6ab0ead5127}{}\label{class_a_d_s_r_adf710a6ecb0980dd26a7b6ab0ead5127}
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & Sets attack rate\\
+\hline
+\end{DoxyParams}
+\index{A\+D\+SR@{A\+D\+SR}!set\+Decay\+Rate@{set\+Decay\+Rate}}
+\index{set\+Decay\+Rate@{set\+Decay\+Rate}!A\+D\+SR@{A\+D\+SR}}
+\subsubsection[{\texorpdfstring{set\+Decay\+Rate(float rate)}{setDecayRate(float rate)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+S\+R\+::set\+Decay\+Rate (
+\begin{DoxyParamCaption}
+\item[{float}]{rate}
+\end{DoxyParamCaption}
+)}\hypertarget{class_a_d_s_r_acdbd41bc66f06ab17abb171a335fc180}{}\label{class_a_d_s_r_acdbd41bc66f06ab17abb171a335fc180}
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & Sets decay rate\\
+\hline
+\end{DoxyParams}
+\index{A\+D\+SR@{A\+D\+SR}!set\+Release\+Rate@{set\+Release\+Rate}}
+\index{set\+Release\+Rate@{set\+Release\+Rate}!A\+D\+SR@{A\+D\+SR}}
+\subsubsection[{\texorpdfstring{set\+Release\+Rate(float rate)}{setReleaseRate(float rate)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+S\+R\+::set\+Release\+Rate (
+\begin{DoxyParamCaption}
+\item[{float}]{rate}
+\end{DoxyParamCaption}
+)}\hypertarget{class_a_d_s_r_a9f98384da4c14db473e4751f625e0e66}{}\label{class_a_d_s_r_a9f98384da4c14db473e4751f625e0e66}
+
+\begin{DoxyParams}{Parameters}
+{\em rate} & Sets release rate\\
+\hline
+\end{DoxyParams}
+\index{A\+D\+SR@{A\+D\+SR}!set\+Sustain\+Level@{set\+Sustain\+Level}}
+\index{set\+Sustain\+Level@{set\+Sustain\+Level}!A\+D\+SR@{A\+D\+SR}}
+\subsubsection[{\texorpdfstring{set\+Sustain\+Level(float level)}{setSustainLevel(float level)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+D\+S\+R\+::set\+Sustain\+Level (
+\begin{DoxyParamCaption}
+\item[{float}]{level}
+\end{DoxyParamCaption}
+)}\hypertarget{class_a_d_s_r_af9f4efe95e72ee6c0066a0249794f367}{}\label{class_a_d_s_r_af9f4efe95e72ee6c0066a0249794f367}
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Sets sustain level\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+A\+D\+S\+R.\+h\item 
+A\+D\+S\+R.\+cpp\end{DoxyCompactItemize}

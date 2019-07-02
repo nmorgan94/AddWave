@@ -1,0 +1,31 @@
+.TH "CustomLook" 3 "Wed Sep 6 2017" "Version 1.01" "AddWave" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CustomLook \- Creates custom UI elements\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CustomLook\&.h>\fP
+.PP
+Inherits LookAndFeel_V3\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdrawLinearSlider\fP (Graphics &g, int x, int y, int width, int height, float sliderPos, float minSliderPos, float maxSliderPos, const Slider::SliderStyle, Slider &slider)"
+.br
+.ti -1c
+.RI "void \fBdrawRotarySlider\fP (Graphics &g, int x, int y, int width, int height, float sliderPos, const float rotaryStartAngle, const float rotaryEndAngle, Slider &slider) override"
+.br
+.RI "\fIDraws custom Dials\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Creates custom UI elements\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AddWave from the source code\&.

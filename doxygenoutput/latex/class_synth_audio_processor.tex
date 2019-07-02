@@ -1,0 +1,502 @@
+\hypertarget{class_synth_audio_processor}{}\section{Synth\+Audio\+Processor Class Reference}
+\label{class_synth_audio_processor}\index{Synth\+Audio\+Processor@{Synth\+Audio\+Processor}}
+
+
+Inheritance diagram for Synth\+Audio\+Processor\+:
+% FIG 0
+
+
+Collaboration diagram for Synth\+Audio\+Processor\+:
+% FIG 1
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Wave\+Shape} \{ \\*
+{\bfseries W\+V\+\_\+\+C\+O\+M\+P\+L\+EX} = 0, 
+{\bfseries W\+V\+\_\+\+S\+Q\+U\+A\+RE}, 
+{\bfseries W\+V\+\_\+\+S\+AW}, 
+{\bfseries W\+V\+\_\+\+S\+IN}, 
+\\*
+{\bfseries W\+V\+\_\+\+T\+R\+I\+A\+N\+G\+LE}
+ \}\hypertarget{class_synth_audio_processor_af5cd9f02a81cec98ebc7329f3732d1f2}{}\label{class_synth_audio_processor_af5cd9f02a81cec98ebc7329f3732d1f2}
+
+\item 
+enum {\bfseries A\+D\+S\+R\+Curve} \{ {\bfseries Attack\+Curve} = 0, 
+{\bfseries Decay\+Release\+Curve}
+ \}\hypertarget{class_synth_audio_processor_a708e08bff3707ba6db3ec81687d5e911}{}\label{class_synth_audio_processor_a708e08bff3707ba6db3ec81687d5e911}
+
+\item 
+typedef std\+::vector$<$ Audio\+Parameter\+Float $\ast$ $>$ {\bfseries Parameter\+Vector}\hypertarget{class_synth_audio_processor_a7781964bd192439b7bd0dbcb9b26ee5b}{}\label{class_synth_audio_processor_a7781964bd192439b7bd0dbcb9b26ee5b}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries prepare\+To\+Play} (double sample\+Rate, int samples\+Per\+Block) override\hypertarget{class_synth_audio_processor_a91b19a3f6194e32354b21bb6d941737b}{}\label{class_synth_audio_processor_a91b19a3f6194e32354b21bb6d941737b}
+
+\item 
+void {\bfseries release\+Resources} () override\hypertarget{class_synth_audio_processor_a638f29a06a7023608e0232eadd8a1cba}{}\label{class_synth_audio_processor_a638f29a06a7023608e0232eadd8a1cba}
+
+\item 
+bool {\bfseries is\+Buses\+Layout\+Supported} (const Buses\+Layout \&layouts) const  override\hypertarget{class_synth_audio_processor_a9b59a3d160ea46c3696e342bbf09daf9}{}\label{class_synth_audio_processor_a9b59a3d160ea46c3696e342bbf09daf9}
+
+\item 
+void \hyperlink{class_synth_audio_processor_a06aca846ee4bc24cb94dd27b580038fa}{process\+Block} (Audio\+Sample\+Buffer \&, Midi\+Buffer \&) override\hypertarget{class_synth_audio_processor_a06aca846ee4bc24cb94dd27b580038fa}{}\label{class_synth_audio_processor_a06aca846ee4bc24cb94dd27b580038fa}
+
+\begin{DoxyCompactList}\small\item\em Master output functions. \end{DoxyCompactList}\item 
+Audio\+Processor\+Editor $\ast$ {\bfseries create\+Editor} () override\hypertarget{class_synth_audio_processor_a1b0368ea8ee1c71a592341fe41b2a6d2}{}\label{class_synth_audio_processor_a1b0368ea8ee1c71a592341fe41b2a6d2}
+
+\item 
+bool {\bfseries has\+Editor} () const  override\hypertarget{class_synth_audio_processor_ae5734bece34856315204ddd0a81367dd}{}\label{class_synth_audio_processor_ae5734bece34856315204ddd0a81367dd}
+
+\item 
+const String {\bfseries get\+Name} () const  override\hypertarget{class_synth_audio_processor_a40ce571a9c48ae0cf3cfa1e3305a4bc3}{}\label{class_synth_audio_processor_a40ce571a9c48ae0cf3cfa1e3305a4bc3}
+
+\item 
+const String {\bfseries get\+Input\+Channel\+Name} (int channel\+Index) const  override\hypertarget{class_synth_audio_processor_a55e9b11a7262393942916f69fbef3a71}{}\label{class_synth_audio_processor_a55e9b11a7262393942916f69fbef3a71}
+
+\item 
+const String {\bfseries get\+Output\+Channel\+Name} (int channel\+Index) const  override\hypertarget{class_synth_audio_processor_aaa55e54edaabb47a521a450866b73af9}{}\label{class_synth_audio_processor_aaa55e54edaabb47a521a450866b73af9}
+
+\item 
+bool {\bfseries is\+Input\+Channel\+Stereo\+Pair} (int index) const  override\hypertarget{class_synth_audio_processor_a5a939c6ecaf0a7445924944b1771be7c}{}\label{class_synth_audio_processor_a5a939c6ecaf0a7445924944b1771be7c}
+
+\item 
+bool {\bfseries is\+Output\+Channel\+Stereo\+Pair} (int index) const  override\hypertarget{class_synth_audio_processor_a3cf46390668fd28f6ee1d17a33bc7a12}{}\label{class_synth_audio_processor_a3cf46390668fd28f6ee1d17a33bc7a12}
+
+\item 
+bool {\bfseries accepts\+Midi} () const  override\hypertarget{class_synth_audio_processor_a2b9007a7728cc7c12d187a88c4b054cf}{}\label{class_synth_audio_processor_a2b9007a7728cc7c12d187a88c4b054cf}
+
+\item 
+bool {\bfseries produces\+Midi} () const  override\hypertarget{class_synth_audio_processor_a2af30afe3160794a8a9068d0f67430cc}{}\label{class_synth_audio_processor_a2af30afe3160794a8a9068d0f67430cc}
+
+\item 
+double {\bfseries get\+Tail\+Length\+Seconds} () const  override\hypertarget{class_synth_audio_processor_a1954cf374ed54eafe345da609f3832b2}{}\label{class_synth_audio_processor_a1954cf374ed54eafe345da609f3832b2}
+
+\item 
+int {\bfseries get\+Num\+Programs} () override\hypertarget{class_synth_audio_processor_a8e1111c20928711a64342bf5984c71ac}{}\label{class_synth_audio_processor_a8e1111c20928711a64342bf5984c71ac}
+
+\item 
+int {\bfseries get\+Current\+Program} () override\hypertarget{class_synth_audio_processor_ad3a9bfa2a558b698def5b12bd7e55585}{}\label{class_synth_audio_processor_ad3a9bfa2a558b698def5b12bd7e55585}
+
+\item 
+void {\bfseries set\+Current\+Program} (int index) override\hypertarget{class_synth_audio_processor_a4b6cd6971957f8639959678393aa6fc9}{}\label{class_synth_audio_processor_a4b6cd6971957f8639959678393aa6fc9}
+
+\item 
+const String {\bfseries get\+Program\+Name} (int index) override\hypertarget{class_synth_audio_processor_a0f08ce1fe76ebc26b000ce4497302a78}{}\label{class_synth_audio_processor_a0f08ce1fe76ebc26b000ce4497302a78}
+
+\item 
+void {\bfseries change\+Program\+Name} (int index, const String \&new\+Name) override\hypertarget{class_synth_audio_processor_a40b1f109271c2fca6e63797389b47c0f}{}\label{class_synth_audio_processor_a40b1f109271c2fca6e63797389b47c0f}
+
+\item 
+void {\bfseries get\+State\+Information} (Memory\+Block \&dest\+Data) override\hypertarget{class_synth_audio_processor_a8ba48307305f830a2a4eeb82daed3273}{}\label{class_synth_audio_processor_a8ba48307305f830a2a4eeb82daed3273}
+
+\item 
+void {\bfseries set\+State\+Information} (const void $\ast$data, int size\+In\+Bytes) override\hypertarget{class_synth_audio_processor_a6e9efeeab582e9c462363bd2bede3959}{}\label{class_synth_audio_processor_a6e9efeeab582e9c462363bd2bede3959}
+
+\item 
+void \hyperlink{class_synth_audio_processor_ae08d1ba97b3ef0d00480c6ba150378cc}{set\+\_\+mute\+\_\+state} (bool state)\hypertarget{class_synth_audio_processor_ae08d1ba97b3ef0d00480c6ba150378cc}{}\label{class_synth_audio_processor_ae08d1ba97b3ef0d00480c6ba150378cc}
+
+\begin{DoxyCompactList}\small\item\em Kill Switch. \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+main\+\_\+gain} (float gain)\hypertarget{class_synth_audio_processor_a2647b27220f8becb1ea1fdba681480af}{}\label{class_synth_audio_processor_a2647b27220f8becb1ea1fdba681480af}
+
+\item 
+void \hyperlink{class_synth_audio_processor_a17d65bfacbf3a5f3841a2246598be7fc}{set\+\_\+lowpass\+\_\+cutoff} (float L\+Pcut)
+\begin{DoxyCompactList}\small\item\em Sets lowpass cutoff frequency. \end{DoxyCompactList}\item 
+void \hyperlink{class_synth_audio_processor_ac498d00a3068ab6869092266b99d65ba}{set\+\_\+highpass\+\_\+cutoff} (float H\+Pcut)
+\begin{DoxyCompactList}\small\item\em Sets highpass cutoff frequency. \end{DoxyCompactList}\item 
+void \hyperlink{class_synth_audio_processor_afb8c6585119247f2c473edf4f6e6e3c5}{set\+\_\+reverb\+\_\+wet} (float Reverb\+Wet)
+\begin{DoxyCompactList}\small\item\em Sets Reverb wet amount. \end{DoxyCompactList}\item 
+void \hyperlink{class_synth_audio_processor_a4bbfc0a3bd8fc135c984bc2fca283cb6}{set\+\_\+reverb\+\_\+dry} (float Reverb\+Dry)
+\begin{DoxyCompactList}\small\item\em Sets Dry mix. \end{DoxyCompactList}\item 
+void \hyperlink{class_synth_audio_processor_a1612f768ecad1e5bd590004a60db06d0}{set\+\_\+reverb\+\_\+width} (float Reverb\+Width)
+\begin{DoxyCompactList}\small\item\em Sets Reverb Width. \end{DoxyCompactList}\item 
+void \hyperlink{class_synth_audio_processor_a1d5b4956b6932d09cba8008c45855eb1}{set\+\_\+reverb\+\_\+roomsize} (float Reverb\+Room\+Size)
+\begin{DoxyCompactList}\small\item\em Sets Reverb Size. \end{DoxyCompactList}\item 
+void \hyperlink{class_synth_audio_processor_aee77caab3c4062483c19e67847efe075}{set\+\_\+reverb\+\_\+damping} (float Reverb\+Damping)
+\begin{DoxyCompactList}\small\item\em Sets Reverb high frequency feedback. \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+distortion\+Amount} (float Distortion\+Amount)\hypertarget{class_synth_audio_processor_af9f13cb9b8c1c94af2d2a56c5bc86259}{}\label{class_synth_audio_processor_af9f13cb9b8c1c94af2d2a56c5bc86259}
+
+\item 
+float {\bfseries get\+\_\+main\+\_\+gain} ()\hypertarget{class_synth_audio_processor_ad5ab529c72489b2495bdbcf8416110cc}{}\label{class_synth_audio_processor_ad5ab529c72489b2495bdbcf8416110cc}
+
+\item 
+float {\bfseries get\+\_\+distortion\+Amount} ()\hypertarget{class_synth_audio_processor_a5161c0b1c3d95ff0757aba9e8cf54342}{}\label{class_synth_audio_processor_a5161c0b1c3d95ff0757aba9e8cf54342}
+
+\item 
+float {\bfseries get\+\_\+reverb\+\_\+wet} ()\hypertarget{class_synth_audio_processor_a998cc25fc1215c18bf444330c958e631}{}\label{class_synth_audio_processor_a998cc25fc1215c18bf444330c958e631}
+
+\item 
+float {\bfseries get\+\_\+reverb\+\_\+dry} ()\hypertarget{class_synth_audio_processor_a1b7f47c4d3baf081002dc991b983e8e6}{}\label{class_synth_audio_processor_a1b7f47c4d3baf081002dc991b983e8e6}
+
+\item 
+float {\bfseries get\+\_\+reverb\+\_\+width} ()\hypertarget{class_synth_audio_processor_aaad3efb85c568f56a7d92c24f57b9e73}{}\label{class_synth_audio_processor_aaad3efb85c568f56a7d92c24f57b9e73}
+
+\item 
+float {\bfseries get\+\_\+reverb\+\_\+roomsize} ()\hypertarget{class_synth_audio_processor_a8deccd0b7a9429bd6f4430631f49af3d}{}\label{class_synth_audio_processor_a8deccd0b7a9429bd6f4430631f49af3d}
+
+\item 
+float {\bfseries get\+\_\+reverb\+\_\+damping} ()\hypertarget{class_synth_audio_processor_a178b68eede8fc9916b3f3e8cce5343ab}{}\label{class_synth_audio_processor_a178b68eede8fc9916b3f3e8cce5343ab}
+
+\item 
+float {\bfseries get\+\_\+left\+\_\+delay\+\_\+time} ()\hypertarget{class_synth_audio_processor_a90f080ee05cf6fa5133566add3604cf1}{}\label{class_synth_audio_processor_a90f080ee05cf6fa5133566add3604cf1}
+
+\item 
+float {\bfseries get\+\_\+right\+\_\+delay\+\_\+time} ()\hypertarget{class_synth_audio_processor_a0cb5b44501ea7f4f15cefe94a1df2504}{}\label{class_synth_audio_processor_a0cb5b44501ea7f4f15cefe94a1df2504}
+
+\item 
+float {\bfseries get\+\_\+left\+\_\+delay\+\_\+feedback} ()\hypertarget{class_synth_audio_processor_a1c293f51713d9ba4d149d81f39dc5357}{}\label{class_synth_audio_processor_a1c293f51713d9ba4d149d81f39dc5357}
+
+\item 
+float {\bfseries get\+\_\+right\+\_\+delay\+\_\+feedback} ()\hypertarget{class_synth_audio_processor_a8a5dee9199a49722d8af2751ee8b855a}{}\label{class_synth_audio_processor_a8a5dee9199a49722d8af2751ee8b855a}
+
+\item 
+float {\bfseries get\+\_\+lowpass\+\_\+cutoff} ()\hypertarget{class_synth_audio_processor_aeb050fafe3b205fa094c1a922480c669}{}\label{class_synth_audio_processor_aeb050fafe3b205fa094c1a922480c669}
+
+\item 
+float {\bfseries get\+\_\+highpass\+\_\+cutoff} ()\hypertarget{class_synth_audio_processor_ae81f43750b9a5dfb07f4e542f82c3c27}{}\label{class_synth_audio_processor_ae81f43750b9a5dfb07f4e542f82c3c27}
+
+\item 
+int {\bfseries get\+\_\+waveshape\+Number} ()\hypertarget{class_synth_audio_processor_a72b5c7bb17dd54260c8672acefb0aa8f}{}\label{class_synth_audio_processor_a72b5c7bb17dd54260c8672acefb0aa8f}
+
+\item 
+int {\bfseries get\+\_\+power\+Button\+\_\+val} ()\hypertarget{class_synth_audio_processor_a21c509df77f87eea673643fad5b8a651}{}\label{class_synth_audio_processor_a21c509df77f87eea673643fad5b8a651}
+
+\item 
+float {\bfseries get\+\_\+hp\+\_\+env\+\_\+amount} ()\hypertarget{class_synth_audio_processor_abb0f512d2d92fdd6bdc27b6d6418e94f}{}\label{class_synth_audio_processor_abb0f512d2d92fdd6bdc27b6d6418e94f}
+
+\item 
+float {\bfseries get\+\_\+hp\+\_\+env\+\_\+attack} ()\hypertarget{class_synth_audio_processor_ab14524fdf38d2251c4e7b14bd7586534}{}\label{class_synth_audio_processor_ab14524fdf38d2251c4e7b14bd7586534}
+
+\item 
+float {\bfseries get\+\_\+hp\+\_\+env\+\_\+decay} ()\hypertarget{class_synth_audio_processor_a9c9ed1bfe110e8cf86341e7c8d009f27}{}\label{class_synth_audio_processor_a9c9ed1bfe110e8cf86341e7c8d009f27}
+
+\item 
+float {\bfseries get\+\_\+hp\+\_\+env\+\_\+sustain} ()\hypertarget{class_synth_audio_processor_ac475ad99b34e64873de87ceba5ee5692}{}\label{class_synth_audio_processor_ac475ad99b34e64873de87ceba5ee5692}
+
+\item 
+float {\bfseries get\+\_\+hp\+\_\+env\+\_\+release} ()\hypertarget{class_synth_audio_processor_a2f72b0e01188edfd7856dea50e7a8d83}{}\label{class_synth_audio_processor_a2f72b0e01188edfd7856dea50e7a8d83}
+
+\item 
+float {\bfseries get\+\_\+lp\+\_\+env\+\_\+amount} ()\hypertarget{class_synth_audio_processor_afc5284988c7c215bfe1c5cfa82111c8b}{}\label{class_synth_audio_processor_afc5284988c7c215bfe1c5cfa82111c8b}
+
+\item 
+float {\bfseries get\+\_\+lp\+\_\+env\+\_\+attack} ()\hypertarget{class_synth_audio_processor_aede668c0c138763cab4db7860b18a5da}{}\label{class_synth_audio_processor_aede668c0c138763cab4db7860b18a5da}
+
+\item 
+float {\bfseries get\+\_\+lp\+\_\+env\+\_\+decay} ()\hypertarget{class_synth_audio_processor_af365d6220c8011aabe38f7e23958bf1c}{}\label{class_synth_audio_processor_af365d6220c8011aabe38f7e23958bf1c}
+
+\item 
+float {\bfseries get\+\_\+lp\+\_\+env\+\_\+sustain} ()\hypertarget{class_synth_audio_processor_aa3a2aa1383761651c17bd1a53929d556}{}\label{class_synth_audio_processor_aa3a2aa1383761651c17bd1a53929d556}
+
+\item 
+float {\bfseries get\+\_\+lp\+\_\+env\+\_\+release} ()\hypertarget{class_synth_audio_processor_a0e5568c9920ffb18bfa6203ec8d02041}{}\label{class_synth_audio_processor_a0e5568c9920ffb18bfa6203ec8d02041}
+
+\item 
+void \hyperlink{class_synth_audio_processor_a38adbf1faa8278747feaeb9a6d365200}{set\+\_\+wave\+\_\+shape} (Wave\+Shape shape)\hypertarget{class_synth_audio_processor_a38adbf1faa8278747feaeb9a6d365200}{}\label{class_synth_audio_processor_a38adbf1faa8278747feaeb9a6d365200}
+
+\begin{DoxyCompactList}\small\item\em Sets which waveshape to load. \end{DoxyCompactList}\item 
+void \hyperlink{class_synth_audio_processor_a2ece21b50981f3d7809b905498a9f1f7}{set\+\_\+square} ()\hypertarget{class_synth_audio_processor_a2ece21b50981f3d7809b905498a9f1f7}{}\label{class_synth_audio_processor_a2ece21b50981f3d7809b905498a9f1f7}
+
+\begin{DoxyCompactList}\small\item\em Sets Square wave. \end{DoxyCompactList}\item 
+void \hyperlink{class_synth_audio_processor_ac1bdfecf2781e590a384d30eb76fbdee}{set\+\_\+complex\+\_\+sin} ()\hypertarget{class_synth_audio_processor_ac1bdfecf2781e590a384d30eb76fbdee}{}\label{class_synth_audio_processor_ac1bdfecf2781e590a384d30eb76fbdee}
+
+\begin{DoxyCompactList}\small\item\em Sets Complex Sin wave. \end{DoxyCompactList}\item 
+void \hyperlink{class_synth_audio_processor_a189c02e2f3acbfd708186dbc3bb0916e}{set\+\_\+saw} ()\hypertarget{class_synth_audio_processor_a189c02e2f3acbfd708186dbc3bb0916e}{}\label{class_synth_audio_processor_a189c02e2f3acbfd708186dbc3bb0916e}
+
+\begin{DoxyCompactList}\small\item\em Sets Saw wave. \end{DoxyCompactList}\item 
+void \hyperlink{class_synth_audio_processor_a3ab29ed5df1da4e3435888cf91a717b0}{set\+\_\+sin} ()\hypertarget{class_synth_audio_processor_a3ab29ed5df1da4e3435888cf91a717b0}{}\label{class_synth_audio_processor_a3ab29ed5df1da4e3435888cf91a717b0}
+
+\begin{DoxyCompactList}\small\item\em Sets Sin wave. \end{DoxyCompactList}\item 
+void \hyperlink{class_synth_audio_processor_a09fd2a9104013eaf78f61935f72b5ab8}{set\+\_\+triangle} ()\hypertarget{class_synth_audio_processor_a09fd2a9104013eaf78f61935f72b5ab8}{}\label{class_synth_audio_processor_a09fd2a9104013eaf78f61935f72b5ab8}
+
+\begin{DoxyCompactList}\small\item\em Sets Triangle wave. \end{DoxyCompactList}\item 
+void {\bfseries set\+\_\+\+A\+D\+S\+R\+\_\+curve} (A\+D\+S\+R\+Curve curve)\hypertarget{class_synth_audio_processor_a158672eb5ca30f0f138e1d58391fa242}{}\label{class_synth_audio_processor_a158672eb5ca30f0f138e1d58391fa242}
+
+\item 
+void {\bfseries set\+\_\+attack\+\_\+curve} ()\hypertarget{class_synth_audio_processor_ada3956c2332f0c156f57a20513c83c06}{}\label{class_synth_audio_processor_ada3956c2332f0c156f57a20513c83c06}
+
+\item 
+void {\bfseries set\+\_\+decay\+\_\+release\+\_\+curve} ()\hypertarget{class_synth_audio_processor_af89bb282d450985d3fd94ccfa2b80143}{}\label{class_synth_audio_processor_af89bb282d450985d3fd94ccfa2b80143}
+
+\item 
+void {\bfseries set\+\_\+num\+\_\+voices} (int voices)\hypertarget{class_synth_audio_processor_a031a74ae75e727b4670f64d5f8e36f7f}{}\label{class_synth_audio_processor_a031a74ae75e727b4670f64d5f8e36f7f}
+
+\item 
+void {\bfseries set\+\_\+num\+\_\+harmonics} (int)\hypertarget{class_synth_audio_processor_ad1a5afb9be6ea1eb029ac967e3993fa8}{}\label{class_synth_audio_processor_ad1a5afb9be6ea1eb029ac967e3993fa8}
+
+\item 
+int {\bfseries get\+\_\+num\+\_\+voices} ()\hypertarget{class_synth_audio_processor_a55a4d919928ebc436b8814666827d058}{}\label{class_synth_audio_processor_a55a4d919928ebc436b8814666827d058}
+
+\item 
+void {\bfseries refresh} ()\hypertarget{class_synth_audio_processor_ae14efede0902a9598fc738c0ad720b32}{}\label{class_synth_audio_processor_ae14efede0902a9598fc738c0ad720b32}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Audio\+Parameter\+Bool $\ast$ {\bfseries m\+\_\+power\+Button\+Param}\hypertarget{class_synth_audio_processor_a1e7f0e2aaa30cdf50d5abe444f9b1ee4}{}\label{class_synth_audio_processor_a1e7f0e2aaa30cdf50d5abe444f9b1ee4}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+gain\+Param}\hypertarget{class_synth_audio_processor_a54df7b789e2050a87956c2de38197bfc}{}\label{class_synth_audio_processor_a54df7b789e2050a87956c2de38197bfc}
+
+\item 
+Audio\+Parameter\+Int $\ast$ {\bfseries m\+\_\+waveshape\+Param}\hypertarget{class_synth_audio_processor_a7968568e4687502d4198362e7d6e77b9}{}\label{class_synth_audio_processor_a7968568e4687502d4198362e7d6e77b9}
+
+\item 
+Audio\+Parameter\+Int $\ast$ {\bfseries m\+\_\+voices\+Param}\hypertarget{class_synth_audio_processor_abd9217e35e339518a0fdb757b5e7c955}{}\label{class_synth_audio_processor_abd9217e35e339518a0fdb757b5e7c955}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+delay\+Time\+Left}\hypertarget{class_synth_audio_processor_a97a8bb62a399eab090c49174deb02bb5}{}\label{class_synth_audio_processor_a97a8bb62a399eab090c49174deb02bb5}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+delay\+Time\+Right}\hypertarget{class_synth_audio_processor_a2164eaffb07aeae27570a6f492c3fc59}{}\label{class_synth_audio_processor_a2164eaffb07aeae27570a6f492c3fc59}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+delay\+Feedback\+Left}\hypertarget{class_synth_audio_processor_afc373ff07226f6afdea94611196c17e5}{}\label{class_synth_audio_processor_afc373ff07226f6afdea94611196c17e5}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+delay\+Feedback\+Right}\hypertarget{class_synth_audio_processor_ace92806f78b3444c9638288e7d243376}{}\label{class_synth_audio_processor_ace92806f78b3444c9638288e7d243376}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+wet}\hypertarget{class_synth_audio_processor_acb2862c12bf2bb82e5acd8dc798019f5}{}\label{class_synth_audio_processor_acb2862c12bf2bb82e5acd8dc798019f5}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+distortion\+Amount}\hypertarget{class_synth_audio_processor_a3fd719e5f5593b9270724e80e3919866}{}\label{class_synth_audio_processor_a3fd719e5f5593b9270724e80e3919866}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+reverb\+Wet\+Param}\hypertarget{class_synth_audio_processor_a64b7996fda36b2450a09e412940ce68d}{}\label{class_synth_audio_processor_a64b7996fda36b2450a09e412940ce68d}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+reverb\+Dry\+Param}\hypertarget{class_synth_audio_processor_a958d4a51a4cd79264b5ed6dcb396103e}{}\label{class_synth_audio_processor_a958d4a51a4cd79264b5ed6dcb396103e}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+reverb\+Width\+Param}\hypertarget{class_synth_audio_processor_aeb307760699cffad9cca53f89923d527}{}\label{class_synth_audio_processor_aeb307760699cffad9cca53f89923d527}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+reverb\+Damping\+Param}\hypertarget{class_synth_audio_processor_a0603b3c2f729847635ea66861e76de72}{}\label{class_synth_audio_processor_a0603b3c2f729847635ea66861e76de72}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+reverb\+Roomsize\+Param}\hypertarget{class_synth_audio_processor_ab2a411771aea7b7c093d74824cb0fa90}{}\label{class_synth_audio_processor_ab2a411771aea7b7c093d74824cb0fa90}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+lowpass\+Cutoff\+Param}\hypertarget{class_synth_audio_processor_a0d6fb75f27b30fa8fdea74eefd43b655}{}\label{class_synth_audio_processor_a0d6fb75f27b30fa8fdea74eefd43b655}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+highpass\+Cutoff\+Param}\hypertarget{class_synth_audio_processor_a2f750b08546c04e4cdf35133b0811916}{}\label{class_synth_audio_processor_a2f750b08546c04e4cdf35133b0811916}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+hp\+Amount}\hypertarget{class_synth_audio_processor_a744b92438ac79b8967fe460528c65c0c}{}\label{class_synth_audio_processor_a744b92438ac79b8967fe460528c65c0c}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+lp\+Amount}\hypertarget{class_synth_audio_processor_adaacacb5df765c638934311d8ec636c1}{}\label{class_synth_audio_processor_adaacacb5df765c638934311d8ec636c1}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+hp\+Attack}\hypertarget{class_synth_audio_processor_ae5f7336b97904ec077c76ff41983d236}{}\label{class_synth_audio_processor_ae5f7336b97904ec077c76ff41983d236}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+lp\+Attack}\hypertarget{class_synth_audio_processor_ac267e482df662f3e85f36000fcb03c7d}{}\label{class_synth_audio_processor_ac267e482df662f3e85f36000fcb03c7d}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+hp\+Decay}\hypertarget{class_synth_audio_processor_ad082919a6f78fe5088f91b22d057e5cd}{}\label{class_synth_audio_processor_ad082919a6f78fe5088f91b22d057e5cd}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+lp\+Decay}\hypertarget{class_synth_audio_processor_aace8e1176b8bed06a0aadad9628c1878}{}\label{class_synth_audio_processor_aace8e1176b8bed06a0aadad9628c1878}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+hp\+Sustain}\hypertarget{class_synth_audio_processor_a0f79a7d03d21fed81f47e6bbc212f09a}{}\label{class_synth_audio_processor_a0f79a7d03d21fed81f47e6bbc212f09a}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+lp\+Sustain}\hypertarget{class_synth_audio_processor_a5871bd07ed581bdc9d883f1fec338cd0}{}\label{class_synth_audio_processor_a5871bd07ed581bdc9d883f1fec338cd0}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+hp\+Release}\hypertarget{class_synth_audio_processor_aaedabbc26c2832603acdf3c2096581fc}{}\label{class_synth_audio_processor_aaedabbc26c2832603acdf3c2096581fc}
+
+\item 
+Audio\+Parameter\+Float $\ast$ {\bfseries m\+\_\+lp\+Release}\hypertarget{class_synth_audio_processor_afeb5023ca746ebcd4bf648c2b0c39ecc}{}\label{class_synth_audio_processor_afeb5023ca746ebcd4bf648c2b0c39ecc}
+
+\item 
+Midi\+Message {\bfseries midi\+Env}\hypertarget{class_synth_audio_processor_ae808997bbabec5bce2f41bb078c7822f}{}\label{class_synth_audio_processor_ae808997bbabec5bce2f41bb078c7822f}
+
+\item 
+\hyperlink{class_a_d_s_r}{A\+D\+SR} {\bfseries L\+P\+\_\+\+A\+D\+SR}\hypertarget{class_synth_audio_processor_a0e877b4a2208ee70c469901159f1f1c5}{}\label{class_synth_audio_processor_a0e877b4a2208ee70c469901159f1f1c5}
+
+\item 
+\hyperlink{class_a_d_s_r}{A\+D\+SR} {\bfseries H\+P\+\_\+\+A\+D\+SR}\hypertarget{class_synth_audio_processor_a7c13ad67b6d058c38416905905991bf5}{}\label{class_synth_audio_processor_a7c13ad67b6d058c38416905905991bf5}
+
+\item 
+bool {\bfseries m\+\_\+reverb\+Bypass}\hypertarget{class_synth_audio_processor_a765b5a369c435b084765d56745bcff96}{}\label{class_synth_audio_processor_a765b5a369c435b084765d56745bcff96}
+
+\item 
+bool {\bfseries m\+\_\+delay\+Bypass}\hypertarget{class_synth_audio_processor_ac7e5af121c950247ee53911765c5bc34}{}\label{class_synth_audio_processor_ac7e5af121c950247ee53911765c5bc34}
+
+\item 
+bool {\bfseries m\+\_\+filter\+Bypass}\hypertarget{class_synth_audio_processor_a10a4042267dd145a8cad550bbd4421a9}{}\label{class_synth_audio_processor_a10a4042267dd145a8cad550bbd4421a9}
+
+\item 
+bool {\bfseries m\+\_\+distortion\+Bypass}\hypertarget{class_synth_audio_processor_a4a2008744f76518b8d3086c978a865f4}{}\label{class_synth_audio_processor_a4a2008744f76518b8d3086c978a865f4}
+
+\item 
+bool {\bfseries m\+\_\+lp\+Bypass}\hypertarget{class_synth_audio_processor_a6a7857d8416810ea7715e90894985a21}{}\label{class_synth_audio_processor_a6a7857d8416810ea7715e90894985a21}
+
+\item 
+bool {\bfseries m\+\_\+hp\+Bypass}\hypertarget{class_synth_audio_processor_a08d91d802d55b9a9af8693213602ba37}{}\label{class_synth_audio_processor_a08d91d802d55b9a9af8693213602ba37}
+
+\item 
+Midi\+Keyboard\+State {\bfseries keyboard\+State}\hypertarget{class_synth_audio_processor_a7380bf543e79be54b35e95c4fd5cccbc}{}\label{class_synth_audio_processor_a7380bf543e79be54b35e95c4fd5cccbc}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Parameter\+Vector {\bfseries s\+\_\+amplitudes}\hypertarget{class_synth_audio_processor_acf4aa2d3317ec70bd755d2a16cab1696}{}\label{class_synth_audio_processor_acf4aa2d3317ec70bd755d2a16cab1696}
+
+\item 
+static Parameter\+Vector {\bfseries s\+\_\+attack\+Values}\hypertarget{class_synth_audio_processor_a619d65cd8d80d45856f5dae732244a93}{}\label{class_synth_audio_processor_a619d65cd8d80d45856f5dae732244a93}
+
+\item 
+static Parameter\+Vector {\bfseries s\+\_\+decay\+Values}\hypertarget{class_synth_audio_processor_a8e06230b271edc52e64f0d3f3d05421b}{}\label{class_synth_audio_processor_a8e06230b271edc52e64f0d3f3d05421b}
+
+\item 
+static Parameter\+Vector {\bfseries s\+\_\+sustain\+Values}\hypertarget{class_synth_audio_processor_a8c55f8f38de7fca6b35d176d5a7ea880}{}\label{class_synth_audio_processor_a8c55f8f38de7fca6b35d176d5a7ea880}
+
+\item 
+static Parameter\+Vector {\bfseries s\+\_\+release\+Values}\hypertarget{class_synth_audio_processor_aab7b87dbd8e4b451d2dab61d9aacf195}{}\label{class_synth_audio_processor_aab7b87dbd8e4b451d2dab61d9aacf195}
+
+\item 
+static Parameter\+Vector {\bfseries s\+\_\+pitch\+Amount}\hypertarget{class_synth_audio_processor_a82442aece377064a9ffe03a0a6a32538}{}\label{class_synth_audio_processor_a82442aece377064a9ffe03a0a6a32538}
+
+\item 
+static Parameter\+Vector {\bfseries s\+\_\+pitch\+Attack\+Values}\hypertarget{class_synth_audio_processor_aad58c8fefc6fc6b49e32eedcef5c96f6}{}\label{class_synth_audio_processor_aad58c8fefc6fc6b49e32eedcef5c96f6}
+
+\item 
+static Parameter\+Vector {\bfseries s\+\_\+pitch\+Decay\+Values}\hypertarget{class_synth_audio_processor_a396b74657064f7d2a407aa2fb632a70e}{}\label{class_synth_audio_processor_a396b74657064f7d2a407aa2fb632a70e}
+
+\item 
+static Parameter\+Vector {\bfseries s\+\_\+pitch\+Sustain\+Values}\hypertarget{class_synth_audio_processor_ad4ba38a503e514d6595f86d8b3587194}{}\label{class_synth_audio_processor_ad4ba38a503e514d6595f86d8b3587194}
+
+\item 
+static Parameter\+Vector {\bfseries s\+\_\+pitch\+Release\+Values}\hypertarget{class_synth_audio_processor_af7f52d75e7a47577372aa646fba7bf06}{}\label{class_synth_audio_processor_af7f52d75e7a47577372aa646fba7bf06}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{Synth\+Audio\+Processor@{Synth\+Audio\+Processor}!set\+\_\+highpass\+\_\+cutoff@{set\+\_\+highpass\+\_\+cutoff}}
+\index{set\+\_\+highpass\+\_\+cutoff@{set\+\_\+highpass\+\_\+cutoff}!Synth\+Audio\+Processor@{Synth\+Audio\+Processor}}
+\subsubsection[{\texorpdfstring{set\+\_\+highpass\+\_\+cutoff(float H\+Pcut)}{set_highpass_cutoff(float HPcut)}}]{\setlength{\rightskip}{0pt plus 5cm}void Synth\+Audio\+Processor\+::set\+\_\+highpass\+\_\+cutoff (
+\begin{DoxyParamCaption}
+\item[{float}]{H\+Pcut}
+\end{DoxyParamCaption}
+)}\hypertarget{class_synth_audio_processor_ac498d00a3068ab6869092266b99d65ba}{}\label{class_synth_audio_processor_ac498d00a3068ab6869092266b99d65ba}
+
+
+Sets highpass cutoff frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em H\+Pcut} & Frequency at which highpass filters audio \\
+\hline
+\end{DoxyParams}
+\index{Synth\+Audio\+Processor@{Synth\+Audio\+Processor}!set\+\_\+lowpass\+\_\+cutoff@{set\+\_\+lowpass\+\_\+cutoff}}
+\index{set\+\_\+lowpass\+\_\+cutoff@{set\+\_\+lowpass\+\_\+cutoff}!Synth\+Audio\+Processor@{Synth\+Audio\+Processor}}
+\subsubsection[{\texorpdfstring{set\+\_\+lowpass\+\_\+cutoff(float L\+Pcut)}{set_lowpass_cutoff(float LPcut)}}]{\setlength{\rightskip}{0pt plus 5cm}void Synth\+Audio\+Processor\+::set\+\_\+lowpass\+\_\+cutoff (
+\begin{DoxyParamCaption}
+\item[{float}]{L\+Pcut}
+\end{DoxyParamCaption}
+)}\hypertarget{class_synth_audio_processor_a17d65bfacbf3a5f3841a2246598be7fc}{}\label{class_synth_audio_processor_a17d65bfacbf3a5f3841a2246598be7fc}
+
+
+Sets lowpass cutoff frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em L\+Pcut} & Frequency at which lowpass filters audio \\
+\hline
+\end{DoxyParams}
+\index{Synth\+Audio\+Processor@{Synth\+Audio\+Processor}!set\+\_\+reverb\+\_\+damping@{set\+\_\+reverb\+\_\+damping}}
+\index{set\+\_\+reverb\+\_\+damping@{set\+\_\+reverb\+\_\+damping}!Synth\+Audio\+Processor@{Synth\+Audio\+Processor}}
+\subsubsection[{\texorpdfstring{set\+\_\+reverb\+\_\+damping(float Reverb\+Damping)}{set_reverb_damping(float ReverbDamping)}}]{\setlength{\rightskip}{0pt plus 5cm}void Synth\+Audio\+Processor\+::set\+\_\+reverb\+\_\+damping (
+\begin{DoxyParamCaption}
+\item[{float}]{Reverb\+Damping}
+\end{DoxyParamCaption}
+)}\hypertarget{class_synth_audio_processor_aee77caab3c4062483c19e67847efe075}{}\label{class_synth_audio_processor_aee77caab3c4062483c19e67847efe075}
+
+
+Sets Reverb high frequency feedback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Reverb\+Damping} & Damping amount \\
+\hline
+\end{DoxyParams}
+\index{Synth\+Audio\+Processor@{Synth\+Audio\+Processor}!set\+\_\+reverb\+\_\+dry@{set\+\_\+reverb\+\_\+dry}}
+\index{set\+\_\+reverb\+\_\+dry@{set\+\_\+reverb\+\_\+dry}!Synth\+Audio\+Processor@{Synth\+Audio\+Processor}}
+\subsubsection[{\texorpdfstring{set\+\_\+reverb\+\_\+dry(float Reverb\+Dry)}{set_reverb_dry(float ReverbDry)}}]{\setlength{\rightskip}{0pt plus 5cm}void Synth\+Audio\+Processor\+::set\+\_\+reverb\+\_\+dry (
+\begin{DoxyParamCaption}
+\item[{float}]{Reverb\+Dry}
+\end{DoxyParamCaption}
+)}\hypertarget{class_synth_audio_processor_a4bbfc0a3bd8fc135c984bc2fca283cb6}{}\label{class_synth_audio_processor_a4bbfc0a3bd8fc135c984bc2fca283cb6}
+
+
+Sets Dry mix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Reverb\+Dry} & Dry mix level \\
+\hline
+\end{DoxyParams}
+\index{Synth\+Audio\+Processor@{Synth\+Audio\+Processor}!set\+\_\+reverb\+\_\+roomsize@{set\+\_\+reverb\+\_\+roomsize}}
+\index{set\+\_\+reverb\+\_\+roomsize@{set\+\_\+reverb\+\_\+roomsize}!Synth\+Audio\+Processor@{Synth\+Audio\+Processor}}
+\subsubsection[{\texorpdfstring{set\+\_\+reverb\+\_\+roomsize(float Reverb\+Room\+Size)}{set_reverb_roomsize(float ReverbRoomSize)}}]{\setlength{\rightskip}{0pt plus 5cm}void Synth\+Audio\+Processor\+::set\+\_\+reverb\+\_\+roomsize (
+\begin{DoxyParamCaption}
+\item[{float}]{Reverb\+Room\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{class_synth_audio_processor_a1d5b4956b6932d09cba8008c45855eb1}{}\label{class_synth_audio_processor_a1d5b4956b6932d09cba8008c45855eb1}
+
+
+Sets Reverb Size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Reverb\+Room\+Size} & Size of Reverb \\
+\hline
+\end{DoxyParams}
+\index{Synth\+Audio\+Processor@{Synth\+Audio\+Processor}!set\+\_\+reverb\+\_\+wet@{set\+\_\+reverb\+\_\+wet}}
+\index{set\+\_\+reverb\+\_\+wet@{set\+\_\+reverb\+\_\+wet}!Synth\+Audio\+Processor@{Synth\+Audio\+Processor}}
+\subsubsection[{\texorpdfstring{set\+\_\+reverb\+\_\+wet(float Reverb\+Wet)}{set_reverb_wet(float ReverbWet)}}]{\setlength{\rightskip}{0pt plus 5cm}void Synth\+Audio\+Processor\+::set\+\_\+reverb\+\_\+wet (
+\begin{DoxyParamCaption}
+\item[{float}]{Reverb\+Wet}
+\end{DoxyParamCaption}
+)}\hypertarget{class_synth_audio_processor_afb8c6585119247f2c473edf4f6e6e3c5}{}\label{class_synth_audio_processor_afb8c6585119247f2c473edf4f6e6e3c5}
+
+
+Sets Reverb wet amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Reverb\+Wet} & Reverb Amount added \\
+\hline
+\end{DoxyParams}
+\index{Synth\+Audio\+Processor@{Synth\+Audio\+Processor}!set\+\_\+reverb\+\_\+width@{set\+\_\+reverb\+\_\+width}}
+\index{set\+\_\+reverb\+\_\+width@{set\+\_\+reverb\+\_\+width}!Synth\+Audio\+Processor@{Synth\+Audio\+Processor}}
+\subsubsection[{\texorpdfstring{set\+\_\+reverb\+\_\+width(float Reverb\+Width)}{set_reverb_width(float ReverbWidth)}}]{\setlength{\rightskip}{0pt plus 5cm}void Synth\+Audio\+Processor\+::set\+\_\+reverb\+\_\+width (
+\begin{DoxyParamCaption}
+\item[{float}]{Reverb\+Width}
+\end{DoxyParamCaption}
+)}\hypertarget{class_synth_audio_processor_a1612f768ecad1e5bd590004a60db06d0}{}\label{class_synth_audio_processor_a1612f768ecad1e5bd590004a60db06d0}
+
+
+Sets Reverb Width. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Reverb\+Width} & Width of reverb \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Plugin\+Processor.\+h\item 
+Plugin\+Processor.\+cpp\end{DoxyCompactItemize}

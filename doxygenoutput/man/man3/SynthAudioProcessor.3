@@ -1,0 +1,484 @@
+.TH "SynthAudioProcessor" 3 "Wed Sep 6 2017" "Version 1.01" "AddWave" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SynthAudioProcessor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits AudioProcessor\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBWaveShape\fP { \fBWV_COMPLEX\fP = 0, \fBWV_SQUARE\fP, \fBWV_SAW\fP, \fBWV_SIN\fP, \fBWV_TRIANGLE\fP }"
+.br
+.ti -1c
+.RI "enum \fBADSRCurve\fP { \fBAttackCurve\fP = 0, \fBDecayReleaseCurve\fP }"
+.br
+.ti -1c
+.RI "typedef std::vector< AudioParameterFloat * > \fBParameterVector\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBprepareToPlay\fP (double sampleRate, int samplesPerBlock) override"
+.br
+.ti -1c
+.RI "void \fBreleaseResources\fP () override"
+.br
+.ti -1c
+.RI "bool \fBisBusesLayoutSupported\fP (const BusesLayout &layouts) const  override"
+.br
+.ti -1c
+.RI "void \fBprocessBlock\fP (AudioSampleBuffer &, MidiBuffer &) override"
+.br
+.RI "\fIMaster output functions\&. \fP"
+.ti -1c
+.RI "AudioProcessorEditor * \fBcreateEditor\fP () override"
+.br
+.ti -1c
+.RI "bool \fBhasEditor\fP () const  override"
+.br
+.ti -1c
+.RI "const String \fBgetName\fP () const  override"
+.br
+.ti -1c
+.RI "const String \fBgetInputChannelName\fP (int channelIndex) const  override"
+.br
+.ti -1c
+.RI "const String \fBgetOutputChannelName\fP (int channelIndex) const  override"
+.br
+.ti -1c
+.RI "bool \fBisInputChannelStereoPair\fP (int index) const  override"
+.br
+.ti -1c
+.RI "bool \fBisOutputChannelStereoPair\fP (int index) const  override"
+.br
+.ti -1c
+.RI "bool \fBacceptsMidi\fP () const  override"
+.br
+.ti -1c
+.RI "bool \fBproducesMidi\fP () const  override"
+.br
+.ti -1c
+.RI "double \fBgetTailLengthSeconds\fP () const  override"
+.br
+.ti -1c
+.RI "int \fBgetNumPrograms\fP () override"
+.br
+.ti -1c
+.RI "int \fBgetCurrentProgram\fP () override"
+.br
+.ti -1c
+.RI "void \fBsetCurrentProgram\fP (int index) override"
+.br
+.ti -1c
+.RI "const String \fBgetProgramName\fP (int index) override"
+.br
+.ti -1c
+.RI "void \fBchangeProgramName\fP (int index, const String &newName) override"
+.br
+.ti -1c
+.RI "void \fBgetStateInformation\fP (MemoryBlock &destData) override"
+.br
+.ti -1c
+.RI "void \fBsetStateInformation\fP (const void *data, int sizeInBytes) override"
+.br
+.ti -1c
+.RI "void \fBset_mute_state\fP (bool state)"
+.br
+.RI "\fIKill Switch\&. \fP"
+.ti -1c
+.RI "void \fBset_main_gain\fP (float gain)"
+.br
+.ti -1c
+.RI "void \fBset_lowpass_cutoff\fP (float LPcut)"
+.br
+.RI "\fISets lowpass cutoff frequency\&. \fP"
+.ti -1c
+.RI "void \fBset_highpass_cutoff\fP (float HPcut)"
+.br
+.RI "\fISets highpass cutoff frequency\&. \fP"
+.ti -1c
+.RI "void \fBset_reverb_wet\fP (float ReverbWet)"
+.br
+.RI "\fISets Reverb wet amount\&. \fP"
+.ti -1c
+.RI "void \fBset_reverb_dry\fP (float ReverbDry)"
+.br
+.RI "\fISets Dry mix\&. \fP"
+.ti -1c
+.RI "void \fBset_reverb_width\fP (float ReverbWidth)"
+.br
+.RI "\fISets Reverb Width\&. \fP"
+.ti -1c
+.RI "void \fBset_reverb_roomsize\fP (float ReverbRoomSize)"
+.br
+.RI "\fISets Reverb Size\&. \fP"
+.ti -1c
+.RI "void \fBset_reverb_damping\fP (float ReverbDamping)"
+.br
+.RI "\fISets Reverb high frequency feedback\&. \fP"
+.ti -1c
+.RI "void \fBset_distortionAmount\fP (float DistortionAmount)"
+.br
+.ti -1c
+.RI "float \fBget_main_gain\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_distortionAmount\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_reverb_wet\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_reverb_dry\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_reverb_width\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_reverb_roomsize\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_reverb_damping\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_left_delay_time\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_right_delay_time\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_left_delay_feedback\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_right_delay_feedback\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_lowpass_cutoff\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_highpass_cutoff\fP ()"
+.br
+.ti -1c
+.RI "int \fBget_waveshapeNumber\fP ()"
+.br
+.ti -1c
+.RI "int \fBget_powerButton_val\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_ampMultislider_val\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_hp_env_amount\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_hp_env_attack\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_hp_env_decay\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_hp_env_sustain\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_hp_env_release\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_lp_env_amount\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_lp_env_attack\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_lp_env_decay\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_lp_env_sustain\fP ()"
+.br
+.ti -1c
+.RI "float \fBget_lp_env_release\fP ()"
+.br
+.ti -1c
+.RI "void \fBset_wave_shape\fP (WaveShape shape)"
+.br
+.RI "\fISets which waveshape to load\&. \fP"
+.ti -1c
+.RI "void \fBset_square\fP ()"
+.br
+.RI "\fISets Square wave\&. \fP"
+.ti -1c
+.RI "void \fBset_complex_sin\fP ()"
+.br
+.RI "\fISets Complex Sin wave\&. \fP"
+.ti -1c
+.RI "void \fBset_saw\fP ()"
+.br
+.RI "\fISets Saw wave\&. \fP"
+.ti -1c
+.RI "void \fBset_sin\fP ()"
+.br
+.RI "\fISets Sin wave\&. \fP"
+.ti -1c
+.RI "void \fBset_triangle\fP ()"
+.br
+.RI "\fISets Triangle wave\&. \fP"
+.ti -1c
+.RI "void \fBset_ADSR_curve\fP (ADSRCurve curve)"
+.br
+.ti -1c
+.RI "void \fBset_attack_curve\fP ()"
+.br
+.ti -1c
+.RI "void \fBset_decay_release_curve\fP ()"
+.br
+.ti -1c
+.RI "void \fBset_num_voices\fP (int voices)"
+.br
+.ti -1c
+.RI "void \fBset_num_harmonics\fP (int)"
+.br
+.ti -1c
+.RI "int \fBget_num_voices\fP ()"
+.br
+.ti -1c
+.RI "void \fBrefresh\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "AudioParameterBool * \fBm_powerButtonParam\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_gainParam\fP"
+.br
+.ti -1c
+.RI "AudioParameterInt * \fBm_waveshapeParam\fP"
+.br
+.ti -1c
+.RI "AudioParameterInt * \fBm_voicesParam\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_delayTimeLeft\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_delayTimeRight\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_delayFeedbackLeft\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_delayFeedbackRight\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_wet\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_distortionAmount\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_reverbWetParam\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_reverbDryParam\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_reverbWidthParam\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_reverbDampingParam\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_reverbRoomsizeParam\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_lowpassCutoffParam\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_highpassCutoffParam\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_hpAmount\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_lpAmount\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_hpAttack\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_lpAttack\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_hpDecay\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_lpDecay\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_hpSustain\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_lpSustain\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_hpRelease\fP"
+.br
+.ti -1c
+.RI "AudioParameterFloat * \fBm_lpRelease\fP"
+.br
+.ti -1c
+.RI "MidiMessage \fBmidiEnv\fP"
+.br
+.ti -1c
+.RI "\fBADSR\fP \fBLP_ADSR\fP"
+.br
+.ti -1c
+.RI "\fBADSR\fP \fBHP_ADSR\fP"
+.br
+.ti -1c
+.RI "bool \fBm_reverbBypass\fP"
+.br
+.ti -1c
+.RI "bool \fBm_delayBypass\fP"
+.br
+.ti -1c
+.RI "bool \fBm_filterBypass\fP"
+.br
+.ti -1c
+.RI "bool \fBm_distortionBypass\fP"
+.br
+.ti -1c
+.RI "bool \fBm_lpBypass\fP"
+.br
+.ti -1c
+.RI "bool \fBm_hpBypass\fP"
+.br
+.ti -1c
+.RI "MidiKeyboardState \fBkeyboardState\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static ParameterVector \fBs_amplitudes\fP"
+.br
+.ti -1c
+.RI "static ParameterVector \fBs_attackValues\fP"
+.br
+.ti -1c
+.RI "static ParameterVector \fBs_decayValues\fP"
+.br
+.ti -1c
+.RI "static ParameterVector \fBs_sustainValues\fP"
+.br
+.ti -1c
+.RI "static ParameterVector \fBs_releaseValues\fP"
+.br
+.ti -1c
+.RI "static ParameterVector \fBs_pitchAmount\fP"
+.br
+.ti -1c
+.RI "static ParameterVector \fBs_pitchAttackValues\fP"
+.br
+.ti -1c
+.RI "static ParameterVector \fBs_pitchDecayValues\fP"
+.br
+.ti -1c
+.RI "static ParameterVector \fBs_pitchSustainValues\fP"
+.br
+.ti -1c
+.RI "static ParameterVector \fBs_pitchReleaseValues\fP"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void SynthAudioProcessor::set_highpass_cutoff (float HPcut)"
+
+.PP
+Sets highpass cutoff frequency\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIHPcut\fP Frequency at which highpass filters audio 
+.RE
+.PP
+
+.SS "void SynthAudioProcessor::set_lowpass_cutoff (float LPcut)"
+
+.PP
+Sets lowpass cutoff frequency\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fILPcut\fP Frequency at which lowpass filters audio 
+.RE
+.PP
+
+.SS "void SynthAudioProcessor::set_reverb_damping (float ReverbDamping)"
+
+.PP
+Sets Reverb high frequency feedback\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIReverbDamping\fP Damping amount 
+.RE
+.PP
+
+.SS "void SynthAudioProcessor::set_reverb_dry (float ReverbDry)"
+
+.PP
+Sets Dry mix\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIReverbDry\fP Dry mix level 
+.RE
+.PP
+
+.SS "void SynthAudioProcessor::set_reverb_roomsize (float ReverbRoomSize)"
+
+.PP
+Sets Reverb Size\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIReverbRoomSize\fP Size of Reverb 
+.RE
+.PP
+
+.SS "void SynthAudioProcessor::set_reverb_wet (float ReverbWet)"
+
+.PP
+Sets Reverb wet amount\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIReverbWet\fP Reverb Amount added 
+.RE
+.PP
+
+.SS "void SynthAudioProcessor::set_reverb_width (float ReverbWidth)"
+
+.PP
+Sets Reverb Width\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIReverbWidth\fP Width of reverb 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AddWave from the source code\&.

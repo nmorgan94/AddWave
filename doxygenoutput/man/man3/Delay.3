@@ -1,0 +1,63 @@
+.TH "Delay" 3 "Wed Sep 6 2017" "Version 1.01" "AddWave" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Delay \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDelay\fP (int delaySize, float wet)"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.RI "\fIThis clears the delay buffer\&. \fP"
+.ti -1c
+.RI "float \fBread\fP (float time)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (float sample, float feedback)"
+.br
+.ti -1c
+.RI "float \fBdelayAmount\fP (float drySample, float wetSample)"
+.br
+.ti -1c
+.RI "float \fBget_delay_size\fP ()"
+.br
+.ti -1c
+.RI "void \fBset_delay_size\fP (float delaySize)"
+.br
+.RI "\fISets the size of the delay\&. \fP"
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Delay::Delay (int delaySize, float wet)\fC [inline]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdelaySize\fP Maximum delay size 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Delay::set_delay_size (float delaySize)\fC [inline]\fP"
+
+.PP
+Sets the size of the delay\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdelaySize\fP Maximum delay size 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AddWave from the source code\&.

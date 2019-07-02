@@ -1,0 +1,71 @@
+.TH "PolyVoice" 3 "Wed Sep 6 2017" "Version 1.01" "AddWave" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PolyVoice \- Used for implimenting polyphony\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Poly\&.h>\fP
+.PP
+Inherits SynthesiserVoice\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPolyVoice\fP (SynthAudioProcessor::ParameterVector *harmonicParams, SynthAudioProcessor::ParameterVector *attackParams, SynthAudioProcessor::ParameterVector *decayParams, SynthAudioProcessor::ParameterVector *sustainParams, SynthAudioProcessor::ParameterVector *releaseParams, SynthAudioProcessor::ParameterVector *pitchAmountParams, SynthAudioProcessor::ParameterVector *pitchAttackParams, SynthAudioProcessor::ParameterVector *pitchDecayParams, SynthAudioProcessor::ParameterVector *pitchSustainParams, SynthAudioProcessor::ParameterVector *pitchReleaseParams)"
+.br
+.ti -1c
+.RI "bool \fBcanPlaySound\fP (SynthesiserSound *sound)"
+.br
+.ti -1c
+.RI "void \fBstartNote\fP (int midiNoteNumber, float velocity, SynthesiserSound *, int currentPitchWheelPosition)"
+.br
+.ti -1c
+.RI "void \fBstopNote\fP (float velocity, bool allowTailOff) override"
+.br
+.RI "\fIFor implimenting release of envelope\&. \fP"
+.ti -1c
+.RI "void \fBrenderNextBlock\fP (AudioSampleBuffer &outputBuffer, int startSample, int numSamples) override"
+.br
+.RI "\fICreates a block of samples to be played\&. \fP"
+.ti -1c
+.RI "bool \fBset_pitch_bypass\fP (int bypass)"
+.br
+.ti -1c
+.RI "virtual void \fBpitchWheelMoved\fP (int newPitchWheelValue)"
+.br
+.ti -1c
+.RI "virtual void \fBcontrollerMoved\fP (int controllerNumber, int newControllerValue)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBWaveTable\fP & \fBget_wavetable\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static float \fBm_setTargetRatioA\fP"
+.br
+.ti -1c
+.RI "static float \fBm_setTargetRatioDR\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Used for implimenting polyphony\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void PolyVoice::controllerMoved (int controllerNumber, int newControllerValue)\fC [inline]\fP, \fC [virtual]\fP"
+Called to let the voice know that a midi controller has been moved\&. This will be called during the rendering callback, so must be fast and thread-safe\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AddWave from the source code\&.

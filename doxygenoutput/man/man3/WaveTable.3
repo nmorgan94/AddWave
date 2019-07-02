@@ -1,0 +1,77 @@
+.TH "WaveTable" 3 "Wed Sep 6 2017" "Version 1.01" "AddWave" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WaveTable \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWaveTable\fP (int size=512)"
+.br
+.RI "\fIThis is where the wavetables are created\&. \fP"
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.RI "\fIClears table before loading one\&. \fP"
+.ti -1c
+.RI "void \fBfill_saw\fP ()"
+.br
+.RI "\fICreates a saw wave\&. \fP"
+.ti -1c
+.RI "void \fBfill_triangle\fP ()"
+.br
+.RI "\fICreates a triangle wave\&. \fP"
+.ti -1c
+.RI "void \fBfill_complexSin\fP ()"
+.br
+.RI "\fICreates a complex sine wave\&. \fP"
+.ti -1c
+.RI "void \fBfill_sin\fP ()"
+.br
+.RI "\fICreates a sin wave\&. \fP"
+.ti -1c
+.RI "void \fBfill_square\fP ()"
+.br
+.RI "\fICreates a square wave\&. \fP"
+.ti -1c
+.RI "int \fBget_table_size\fP ()"
+.br
+.ti -1c
+.RI "float \fBlinear_lookup\fP (int pos)"
+.br
+.RI "\fIused to run the from the sample of the waveshape at the end of the buffer\&. \fP"
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "WaveTable::WaveTable (int size = \fC512\fP)\fC [inline]\fP"
+
+.PP
+This is where the wavetables are created\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fISize\fP the number of samples to fill the table with 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "float WaveTable::linear_lookup (int pos)\fC [inline]\fP"
+
+.PP
+used to run the from the sample of the waveshape at the end of the buffer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Position in the table 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AddWave from the source code\&.

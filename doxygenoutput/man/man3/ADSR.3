@@ -1,0 +1,159 @@
+.TH "ADSR" 3 "Wed Sep 6 2017" "Version 1.01" "AddWave" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ADSR \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBenvState\fP { \fBenv_idle\fP = 0, \fBenv_attack\fP, \fBenv_decay\fP, \fBenv_sustain\fP, \fBenv_release\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~ADSR\fP (void)"
+.br
+.ti -1c
+.RI "float \fBprocess\fP (void)"
+.br
+.ti -1c
+.RI "float \fBgetOutput\fP (void)"
+.br
+.ti -1c
+.RI "int \fBgetState\fP (void)"
+.br
+.ti -1c
+.RI "void \fBgate\fP (int on)"
+.br
+.ti -1c
+.RI "void \fBsetAttackRate\fP (float rate)"
+.br
+.ti -1c
+.RI "void \fBsetDecayRate\fP (float rate)"
+.br
+.ti -1c
+.RI "void \fBsetReleaseRate\fP (float rate)"
+.br
+.ti -1c
+.RI "void \fBsetSustainLevel\fP (float level)"
+.br
+.ti -1c
+.RI "void \fBsetTargetRatioA\fP (float targetRatio)"
+.br
+.RI "\fISets exponential rate of attack\&. \fP"
+.ti -1c
+.RI "void \fBsetTargetRatioDR\fP (float targetRatio)"
+.br
+.RI "\fIset exponential rate of decay and release \fP"
+.ti -1c
+.RI "void \fBreset\fP (void)"
+.br
+.ti -1c
+.RI "float \fBget_attack_time\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "float \fBcalcCoef\fP (float rate, float targetRatio)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBstate\fP"
+.br
+.ti -1c
+.RI "float \fBoutput\fP"
+.br
+.ti -1c
+.RI "float \fBattackRate\fP"
+.br
+.ti -1c
+.RI "float \fBdecayRate\fP"
+.br
+.ti -1c
+.RI "float \fBreleaseRate\fP"
+.br
+.ti -1c
+.RI "float \fBattackCoef\fP"
+.br
+.ti -1c
+.RI "float \fBdecayCoef\fP"
+.br
+.ti -1c
+.RI "float \fBreleaseCoef\fP"
+.br
+.ti -1c
+.RI "float \fBsustainLevel\fP"
+.br
+.ti -1c
+.RI "float \fBtargetRatioA\fP"
+.br
+.ti -1c
+.RI "float \fBtargetRatioDR\fP"
+.br
+.ti -1c
+.RI "float \fBattackBase\fP"
+.br
+.ti -1c
+.RI "float \fBdecayBase\fP"
+.br
+.ti -1c
+.RI "float \fBreleaseBase\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ADSR::~ADSR (void)"
+Creates envelope paramters 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ADSR::setAttackRate (float rate)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrate\fP Sets attack rate
+.RE
+.PP
+
+.SS "void ADSR::setDecayRate (float rate)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrate\fP Sets decay rate
+.RE
+.PP
+
+.SS "void ADSR::setReleaseRate (float rate)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrate\fP Sets release rate
+.RE
+.PP
+
+.SS "void ADSR::setSustainLevel (float level)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlevel\fP Sets sustain level
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for AddWave from the source code\&.
